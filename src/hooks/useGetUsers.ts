@@ -14,7 +14,10 @@ const useGetUsers = () => {
   const fetchUsers = async () => {
     setLoading(true);
 
-    const response = await fetch("/api/get-all-users");
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/get-all-users`
+    );
+
     const res = await response.json();
     if (res.success) {
       setUsers(res.users);

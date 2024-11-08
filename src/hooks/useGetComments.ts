@@ -13,7 +13,9 @@ const useGetComments = () => {
   const fetchComments = async () => {
     setLoading(true);
 
-    const response = await fetch("/api/get-all-comments");
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/get-all-comments`
+    );
     const res = await response.json();
     if (res.success) {
       setComments(res.comments);
