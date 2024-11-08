@@ -15,7 +15,8 @@ const useGetUsers = () => {
     setLoading(true);
 
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/get-all-users`
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/get-all-users`,
+      { cache: "no-store" }
     );
 
     const res = await response.json();
