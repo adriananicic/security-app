@@ -15,6 +15,7 @@ export async function GET() {
           Pragma: "no-cache",
           Expires: "0",
           "Surrogate-Control": "no-store",
+          "x-vercel-cache": "MISS",
         },
       }
     );
@@ -32,6 +33,7 @@ export async function GET() {
           Pragma: "no-cache",
           Expires: "0",
           "Surrogate-Control": "no-store",
+          "x-vercel-cache": "MISS",
         },
       }
     );
