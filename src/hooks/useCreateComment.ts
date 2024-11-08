@@ -7,13 +7,16 @@ const useCreateComment = () => {
   const createComment = async (content: string) => {
     setLoading(true);
 
-    const response = await fetch("/api/add-comment", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ content }),
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/add-comment`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ content }),
+      }
+    );
 
     const res = await response.json();
 

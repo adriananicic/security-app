@@ -11,13 +11,16 @@ const useCreateUser = () => {
   ) => {
     setLoading(true);
 
-    const response = await fetch("/api/create-user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password, isSensitiveDataExposed }),
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/create-user`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password, isSensitiveDataExposed }),
+      }
+    );
 
     const res = await response.json();
 
